@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  logs_db:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: logs
+  logs-app-image:
+    build:
+      context: .
+    image: logs_app:0.0.1
+    container_name: logs-app
+    ports:
+      - 8080:8080
+    links:
+      - logs_db
