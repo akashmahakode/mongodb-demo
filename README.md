@@ -1,4 +1,4 @@
-#MongoDB Demo
+# MongoDB Demo
 
 This is simple spring boot application intended to demo the integration of 
 MongoDB. 
